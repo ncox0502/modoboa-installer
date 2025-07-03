@@ -214,12 +214,7 @@ ConfigDictTemplate = [
             },
             {
                 "option": "extensions",
-                "default": (
-                    "modoboa-amavis "
-                    "modoboa-rspamd "
-                    "modoboa-webmail modoboa-contacts "
-                    "modoboa-radicale"
-                ),
+                "default": ""
             },
             {
                 "option": "devmode",
@@ -377,14 +372,6 @@ ConfigDictTemplate = [
                 "option": "postmaster_address",
                 "default": "postmaster@%(domain)s",
             },
-            {
-                "option": "radicale_auth_socket_path",
-                "default": "/var/run/dovecot/auth-radicale",
-            },
-            {
-                "option": "move_spam_to_junk",
-                "default": "true",
-            },
         ]
     },
     {
@@ -488,7 +475,7 @@ ConfigDictTemplate = [
             },
             {
                 "option": "nb_processes",
-                "default": "2",
+                "default": "4",
             },
         ]
     },

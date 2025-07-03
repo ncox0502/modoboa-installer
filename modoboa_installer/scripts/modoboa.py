@@ -250,8 +250,6 @@ class Modoboa(base.Installer):
             ),
             "dovecot_mailboxes_owner": (
                 self.config.get("dovecot", "mailboxes_owner")),
-            "radicale_enabled": (
-                "" if "modoboa-radicale" in extensions else "#"),
             "opendkim_user": self.config.get("opendkim", "user"),
             "dkim_user": "_rspamd" if self.config.getboolean("rspamd", "enabled") else self.config.get("opendkim", "user"),
             "minutes": random.randint(1, 59),
@@ -284,7 +282,7 @@ class Modoboa(base.Installer):
             "pdfcredentials": {
                 "storage_dir": pdf_storage_dir
             },
-            "modoboa_radicale": {
+            "calendars": {
                 "server_location": "https://{}/radicale/".format(
                     self.config.get("general", "hostname")),
                 "rights_file_path": "{}/rights".format(

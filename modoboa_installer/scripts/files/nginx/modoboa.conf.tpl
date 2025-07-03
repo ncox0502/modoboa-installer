@@ -37,7 +37,13 @@ server {
         try_files $uri $uri/ =404;
     }
 
-    location ^~ /new-admin {
+    location ~ ^/(api|accounts) {
+        include uwsgi_params;
+        uwsgi_param UWSGI_SCRIPT instance.wsgi:application;
+        uwsgi_pass modoboa;
+    }
+
+    location / {
         alias  %{app_instance_path}/frontend/;
         index  index.html;
 
@@ -55,10 +61,5 @@ server {
 %{rspamd_enabled}        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 %{rspamd_enabled}    }
 
-    location / {
-        include uwsgi_params;
-        uwsgi_param UWSGI_SCRIPT instance.wsgi:application;
-        uwsgi_pass modoboa;
-    }
     %{extra_config}
 }
