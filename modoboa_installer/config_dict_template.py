@@ -214,7 +214,12 @@ ConfigDictTemplate = [
             },
             {
                 "option": "extensions",
-                "default": "modoboa-webmail ",
+                "default": (
+                    "modoboa-amavis "
+                    "modoboa-rspamd "
+                    "modoboa-webmail modoboa-contacts "
+                    "modoboa-radicale"
+                ),
             },
             {
                 "option": "devmode",
