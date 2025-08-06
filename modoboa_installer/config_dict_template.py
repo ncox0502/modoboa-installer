@@ -39,7 +39,7 @@ ConfigDictTemplate = [
             },
             {
                 "option": "type",
-                "default": "amavis",
+                "default": "rspamd",
                 "customizable": True,
                 "question": "Please select your antispam utility",
                 "values": ["rspamd", "amavis"],
@@ -52,7 +52,7 @@ ConfigDictTemplate = [
         "values": [
             {
                 "option": "type",
-                "default": "self-signed",
+                "default": "letsencrypt",
                 "customizable": True,
                 "question": "Please choose your certificate type",
                 "values": ["self-signed", "letsencrypt", "manual"],
