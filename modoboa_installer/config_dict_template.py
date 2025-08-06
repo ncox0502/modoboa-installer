@@ -214,7 +214,7 @@ ConfigDictTemplate = [
             },
             {
                 "option": "extensions",
-                "default": ""
+                "default": "modoboa-webmail ",
             },
             {
                 "option": "devmode",
