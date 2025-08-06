@@ -372,6 +372,10 @@ ConfigDictTemplate = [
                 "option": "postmaster_address",
                 "default": "postmaster@%(domain)s",
             },
+            {
+                "option": "move_spam_to_junk",
+                "default": "true",
+            },
         ]
     },
     {
