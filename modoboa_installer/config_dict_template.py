@@ -214,7 +214,7 @@ ConfigDictTemplate = [
             },
             {
                 "option": "extensions",
-                "default": "",
+                "default": "modoboa-user ",
             },
             {
                 "option": "devmode",
