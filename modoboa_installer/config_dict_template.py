@@ -52,7 +52,7 @@ ConfigDictTemplate = [
         "values": [
             {
                 "option": "type",
-                "default": "letsencrypt",
+                "default": "manual",
                 "customizable": True,
                 "question": "Please choose your certificate type",
                 "values": ["self-signed", "letsencrypt", "manual"],
