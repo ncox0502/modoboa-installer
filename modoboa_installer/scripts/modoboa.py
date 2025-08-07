@@ -147,7 +147,8 @@ class Modoboa(base.Installer):
                 if answer.lower().startswith("n"):
                     return
             shutil.rmtree(target)
-
+        if self.config.getboolean("rspamd", "enabled"):
+            self.extensions.append("modoboa.rspamd")
         prefix = ". {}; ".format(
             os.path.join(self.venv_path, "bin", "activate"))
         args = [
