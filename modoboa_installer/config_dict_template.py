@@ -426,7 +426,27 @@ ConfigDictTemplate = [
             {
                 "option": "disable_local_mail_delivery",
                 "default": "true"
-            }
+            },
+            {
+                "option": "outbound_relay_enabled",
+                "default": "false"
+            },
+            {
+                "option": "relay_host",
+                "default": ""
+            },
+            {
+                "option": "relay_port",
+                "default": ""
+            },
+            {
+                "option": "relay_user",
+                "default": ""
+            },
+            {
+                "option": "relay_password",
+                "default": ""
+            },
         ]
     },
     {
