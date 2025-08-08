@@ -175,3 +175,12 @@ smtpd_recipient_restrictions =
 
 %{rspamd_disabled}postscreen_bare_newline_enable = yes
 %{rspamd_disabled}postscreen_bare_newline_action = enforce
+
+## Outbound Relay
+%{outbound_relay_enabled}relayhost = [%{relay_host}]:%{relay_port}
+%{outbound_relay_enabled}smtp_sasl_auth_enable = yes
+%{outbound_relay_enabled}smtp_sasl_password_maps = lmdb:/etc/postfix/sasl_passwd
+%{outbound_relay_enabled}smtp_sasl_security_options = noanonymous
+%{outbound_relay_enabled}smtp_use_tls = yes
+%{outbound_relay_enabled}smtp_tls_security_level = may
+%{outbound_relay_enabled}smtp_tls_cname_overrides_servername = no
