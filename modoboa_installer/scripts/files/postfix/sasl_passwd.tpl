@@ -1,1 +1,1 @@
-%{relay_password}
+[%{relay_host}]:%{relay_port} %{relay_user}:%{relay_password}
