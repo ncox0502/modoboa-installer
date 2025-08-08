@@ -20,7 +20,7 @@ class Postfix(base.Installer):
     packages = {
         "deb": ["postfix", "postfix-pcre"],
     }
-    config_files = ["main.cf", "master.cf", "anonymize_headers.pcre"]
+    config_files = ["main.cf", "master.cf", "anonymize_headers.pcre", "sasl_passwd"]
 
     def get_packages(self):
         """Additional packages."""
@@ -63,7 +63,9 @@ class Postfix(base.Installer):
             "rspamd_disabled": "" if not self.config.getboolean(
                 "rspamd", "enabled") else "#",
             "local_mail_delivery": "$myhostname" if not self.config.getboolean(
-                "postfix", "disable_local_mail_delivery") else "localhost, localhost.localdomain"
+                "postfix", "disable_local_mail_delivery") else "localhost, localhost.localdomain",
+            "relay_password": self.config.get(
+                "postfix", "relay_password"),
         })
         return context
 
