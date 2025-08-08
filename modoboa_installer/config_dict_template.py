@@ -189,7 +189,7 @@ ConfigDictTemplate = [
             },
             {
                 "option": "timezone",
-                "default": "Europe/Paris",
+                "default": "Europe/London",
             },
             {
                 "option": "dbname",
@@ -422,6 +422,10 @@ ConfigDictTemplate = [
             {
                 "option": "dhe_group",
                 "default": "4096"
+            },
+            {
+                "option": "disable_local_mail_delivery",
+                "default": "true"
             }
         ]
     },
