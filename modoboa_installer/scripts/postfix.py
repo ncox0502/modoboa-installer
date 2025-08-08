@@ -62,6 +62,8 @@ class Postfix(base.Installer):
                 "opendkim", "port"),
             "rspamd_disabled": "" if not self.config.getboolean(
                 "rspamd", "enabled") else "#",
+            "outbound_relay_enabled": "#" if not self.config.getboolean(
+                "postfix", "outbound_relay_enabled") else "",
             "local_mail_delivery": "$myhostname" if not self.config.getboolean(
                 "postfix", "disable_local_mail_delivery") else "localhost, localhost.localdomain",
             "relay_host": self.config.get(
