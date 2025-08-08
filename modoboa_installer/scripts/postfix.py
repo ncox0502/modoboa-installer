@@ -121,6 +121,12 @@ class Postfix(base.Installer):
         if condition:
             install("postwhite", self.config, self.upgrade, self.archive_path)
 
+        #Outbound relay
+        if self.config.getboolean("postfix", "enable_outbound_relay"):
+            utils.exec_cmd("postmap /etc/postfix/sasl_passwd")
+            utils.exec_cmd("chmod 600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db")
+            utils.exec_cmd("chown root:root /etc/postfix/sasl_passwd*")
+
     def backup(self, path):
         """Launch postwhite backup."""
         condition = (
