@@ -179,7 +179,7 @@ smtpd_recipient_restrictions =
 ## Outbound Relay
 %{outbound_relay_enabled}relayhost = [%{relay_host}]:%{relay_port}
 %{outbound_relay_enabled}smtp_sasl_auth_enable = yes
-%{outbound_relay_enabled}smtp_sasl_password_maps = lmdb:/etc/postfix/sasl_passwd
+%{outbound_relay_enabled}smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 %{outbound_relay_enabled}smtp_sasl_security_options = noanonymous
 %{outbound_relay_enabled}smtp_use_tls = yes
 %{outbound_relay_enabled}smtp_tls_security_level = may
