@@ -64,6 +64,12 @@ class Postfix(base.Installer):
                 "rspamd", "enabled") else "#",
             "local_mail_delivery": "$myhostname" if not self.config.getboolean(
                 "postfix", "disable_local_mail_delivery") else "localhost, localhost.localdomain",
+            "relay_host": self.config.get(
+                "postfix", "relay_host"),
+            "relay_port": self.config.get(
+                "postfix", "relay_port"),
+            "relay_user": self.config.get(
+                "postfix", "relay_user"),
             "relay_password": self.config.get(
                 "postfix", "relay_password"),
         })
